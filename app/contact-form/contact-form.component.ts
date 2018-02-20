@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { Contact } from './contact'
 
 @Component({
 	selector: 'app-contact-form',
@@ -8,7 +9,25 @@ import { Component, OnInit } from '@angular/core';
 
 export class ContactFormComponent implements OnInit {
 
-	constructor() { }
+	construct() { }
 
 	ngOnInit() { }
+
+	contacts = []
+
+	contact:Contact = {
+		name: '',
+		email: '',
+		password: '',
+		price: '',
+		date: ''
+	}
+
+	send() {
+		let contact = Object.assign({}, this.contact)
+
+		this.contacts.push(contact)
+
+		// this.contact.clear()
+	}
 }
