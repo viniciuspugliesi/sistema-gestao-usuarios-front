@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FormatCurrentPipe } from './pipes/format-current.pipe';
 import { FormatDatePipe } from './pipes/format-date.pipe';
+import { ContactDirective } from './directives/contact.directive';
 
 @NgModule({
 	declarations: [
     	AppComponent,
     	ContactFormComponent,
     	FormatCurrentPipe,
-    	FormatDatePipe
+    	FormatDatePipe,
+    	ContactDirective
   	],
   	
   	imports: [
