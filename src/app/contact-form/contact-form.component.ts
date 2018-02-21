@@ -13,10 +13,13 @@ export class ContactFormComponent implements OnInit {
 
 	ngOnInit() { }
 
+	id:number = 0
+
 	contact:Contact = {
-		name: '',
-		email: '',
-		message: ''
+		id: null,
+		name: null,
+		email: null,
+		message: null
 	}
 
 	@Input()
@@ -24,13 +27,22 @@ export class ContactFormComponent implements OnInit {
 
 	send() {
 		let contact = Object.assign({}, this.contact)
+
+		contact.id = this.getId()
 		this.contacts.push(contact)
+
 		this.clear()
 	}
 
+	getId() {
+		this.id += 1
+		return this.id
+	}
+
 	clear() {
-		this.contact.name = ''
-		this.contact.email = ''
-		this.contact.message = ''
+		this.contact.id = null
+		this.contact.name = null
+		this.contact.email = null
+		this.contact.message = null
 	}
 }

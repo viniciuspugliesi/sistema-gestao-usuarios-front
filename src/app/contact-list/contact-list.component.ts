@@ -14,5 +14,9 @@ export class ContactListComponent implements OnInit {
     ngOnInit() { }
 
 	@Input()
-	contacts:Array<Contact> = []
+    contacts:Array<Contact> = []
+    
+    destroy(contact) {
+        this.contacts.splice(this.contacts.indexOf(contact), 1);
+    }
 }
