@@ -23,7 +23,7 @@
 </form>
 
 <ul>
-    <li *ngFor="let contact of contacts">
+    <li *ngFor="let contact of contacts" appContact="{{ contact.name }}">
         {{ contact.name | uppercase }} - {{ contact.price | formatCurrent }} - {{ contact.date | formatDate }}
     </li>
 </ul>

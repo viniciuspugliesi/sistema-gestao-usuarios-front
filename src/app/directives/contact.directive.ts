@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
     selector: '[appContact]'
@@ -6,13 +6,30 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 
 export class ContactDirective {
 
+    private _appContact
+
     constructor(private el:ElementRef) {
         this.el.nativeElement.innerHTML += 'conteúdo inserido'
     }
 
-    @HostListener('click')
+    get appContact() {
+        return this._appContact
+    }
 
+    @Input()
+    set appContact(appContact:string) {
+        this._appContact = appContact
+        this.changeColor()
+    }
+
+    // appContact:string
+
+    @HostListener('click')
     onclick() {
-        alert('fui clicado')
+        alert(this.appContact)
+    }
+
+    changeColor() {
+        this.el.nativeElement.style.color = this._appContact === 'Vinicius Pugliesi' ? 'blue' : 'red'
     }
 }
