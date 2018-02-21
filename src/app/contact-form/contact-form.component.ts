@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 import { Contact } from './contact'
 
 @Component({
@@ -13,19 +13,24 @@ export class ContactFormComponent implements OnInit {
 
 	ngOnInit() { }
 
-	contacts = []
-
 	contact:Contact = {
 		name: '',
 		email: '',
-		password: '',
-		price: 0,
-		date: ''
+		message: ''
 	}
+
+	@Input()
+	contacts:Array<Contact> = []
 
 	send() {
 		let contact = Object.assign({}, this.contact)
-
 		this.contacts.push(contact)
+		this.clear()
+	}
+
+	clear() {
+		this.contact.name = ''
+		this.contact.email = ''
+		this.contact.message = ''
 	}
 }

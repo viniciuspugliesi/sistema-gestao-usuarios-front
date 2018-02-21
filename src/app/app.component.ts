@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Contact } from './contact-form/contact';
 
 @Component({
 	selector: 'app-root',
@@ -8,4 +9,6 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 	title = 'app';
+
+	contacts:Array<Contact> = []
 }

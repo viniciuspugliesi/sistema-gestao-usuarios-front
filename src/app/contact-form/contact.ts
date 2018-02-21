@@ -3,9 +3,5 @@ export class Contact {
 
 	email:string
 
-	password:string
-
-	price:number
-
-	date:string
+	message:string
 }

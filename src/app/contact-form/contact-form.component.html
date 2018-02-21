@@ -8,24 +8,8 @@
         <input type="email" class="form-control" id="email" name="email" placeholder="Email" [(ngModel)]="contact.email">
     </div>
     <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="Password" [(ngModel)]="contact.password">
-    </div>
-    <div class="form-group">
-        <label for="price">Valor por hora</label>
-        <input type="text" class="form-control" id="price" name="price" placeholder="R$ 0.00" [(ngModel)]="contact.price">
-    </div>
-    <div class="form-group">
-        <label for="date">Data</label>
-        <input type="text" class="form-control" id="date" name="date" placeholder="yyyy-mm-dd" [(ngModel)]="contact.date">
+        <label for="message">Mensagem</label>
+        <textarea class="form-control" name="message" id="message" rows="2" [(ngModel)]="contact.message"></textarea>
     </div>
     <button type="submit" class="btn btn-info">Submit</button>
 </form>
-
-<ul>
-    <li *ngFor="let contact of contacts" appContact="{{ contact.name }}">
-        {{ contact.name | uppercase }} - {{ contact.price | formatCurrent }} - {{ contact.date | formatDate }}
-    </li>
-</ul>
-
-<p appContact></p>

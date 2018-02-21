@@ -2,15 +2,14 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
+                <li class="btn"><a href="#">Enviar novo contato</a></li>
+                <li class="btn"><a href="#">Listar contatos</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <div class="container">
-    <app-contact-form></app-contact-form>
+    <app-contact-form [contacts]="contacts"></app-contact-form>
+    <app-contact-list [contacts]="contacts"></app-contact-list>
 </div>
