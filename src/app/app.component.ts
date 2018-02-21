@@ -9,6 +9,4 @@ import { Contact } from './contact-form/contact';
 
 export class AppComponent {
 	title = 'app';
-
-	contacts:Array<Contact> = []
 }

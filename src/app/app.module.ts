@@ -8,6 +8,7 @@ import { FormatCurrentPipe } from './pipes/format-current.pipe';
 import { FormatDatePipe } from './pipes/format-date.pipe';
 import { ContactDirective } from './directives/contact.directive';
 import { ContactListComponent } from './contact-list/contact-list.component';
+import { ContactService } from './services/contact.service';
 
 @NgModule({
 	declarations: [
@@ -24,7 +25,9 @@ import { ContactListComponent } from './contact-list/contact-list.component';
         FormsModule
   	],
   	
-  	providers: [],
+  	providers: [
+		ContactService
+	],
 
   	bootstrap: [AppComponent]
 })

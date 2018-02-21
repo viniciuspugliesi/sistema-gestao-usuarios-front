@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Contact } from '../contact-form/contact';
+import { ContactService } from '../services/contact.service';
 
 @Component({
     selector: 'app-contact-list',
@@ -9,13 +10,14 @@ import { Contact } from '../contact-form/contact';
 
 export class ContactListComponent implements OnInit {
 
-    constructor() { }
+    contacts:Array<Contact> = []
+
+    constructor(private contactService:ContactService) {
+        this.contacts = this.contactService.contacts
+    }
 
     ngOnInit() { }
 
-	@Input()
-    contacts:Array<Contact> = []
-    
     destroy(contact) {
         this.contacts.splice(this.contacts.indexOf(contact), 1);
     }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { Contact } from './contact'
+import { ContactService } from '../services/contact.service';
 
 @Component({
 	selector: 'app-contact-form',
@@ -8,10 +9,6 @@ import { Contact } from './contact'
 })
 
 export class ContactFormComponent implements OnInit {
-
-	construct() { }
-
-	ngOnInit() { }
 
 	id:number = 0
 
@@ -25,13 +22,22 @@ export class ContactFormComponent implements OnInit {
 	@Input()
 	contacts:Array<Contact> = []
 
+	constructor(private contactService:ContactService) {
+        this.contacts = this.contactService.contacts
+	}
+
+	ngOnInit() { }
+
 	send() {
-		let contact = Object.assign({}, this.contact)
-
-		contact.id = this.getId()
-		this.contacts.push(contact)
-
+		this.contacts.push(this.copy())
 		this.clear()
+	}
+
+	copy() {
+		let contact = Object.assign({}, this.contact)
+		contact.id = this.getId()
+
+		return contact
 	}
 
 	getId() {
