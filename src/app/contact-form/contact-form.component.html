@@ -1,15 +1,24 @@
-<form (ngSubmit)="send()">
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Name" [(ngModel)]="contact.name">
+<form (ngSubmit)="send()" #formContact="ngForm">
+    <div class="form-group has-feedback" [ngClass]="{'has-error' : !inputName.valid && (inputName.touched || inputName.dirty)}">
+        <label class="control-label" for="name">Name *</label>
+        <input type="text" class="form-control" id="name" name="name" aria-describedby="inputName" [(ngModel)]="contact.name" required #inputName="ngModel">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" title="Preenchimento incorreto" *ngIf="inputName.errors && (inputName.touched || inputName.dirty)"></span>
+        <span class="sr-only">(warning)</span>
     </div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Email" [(ngModel)]="contact.email">
+
+    <div class="form-group has-feedback" [ngClass]="{'has-error' : !inputEmail.valid && (inputEmail.touched || inputEmail.dirty)}">
+        <label class="control-label" for="email">Email *</label>
+        <input type="email" class="form-control" id="email" name="email" aria-describedby="inputEmail" [(ngModel)]="contact.email" required email #inputEmail="ngModel">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" title="Preenchimento incorreto" *ngIf="inputEmail.errors && (inputEmail.touched || inputEmail.dirty)"></span>
+        <span class="sr-only">(warning)</span>
     </div>
-    <div class="form-group">
-        <label for="message">Mensagem</label>
-        <textarea class="form-control" name="message" id="message" rows="2" [(ngModel)]="contact.message"></textarea>
+
+    <div class="form-group has-feedback" [ngClass]="{'has-error' : !inputMessage.valid && (inputMessage.touched || inputMessage.dirty)}">
+        <label class="control-label" for="message">Mensagem *</label>
+        <textarea class="form-control" name="message" id="message" rows="2" aria-describedby="inputMessage" [(ngModel)]="contact.message" required #inputMessage="ngModel"></textarea>
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" title="Preenchimento incorreto" *ngIf="inputMessage.errors && (inputMessage.touched || inputMessage.dirty)"></span>
+        <span class="sr-only">(warning)</span>
     </div>
-    <button class="btn btn-primary btn-lg">Adicionar</button>
+
+    <button class="btn btn-primary btn-lg" [disabled]="!formContact.valid">Adicionar</button>
 </form>
