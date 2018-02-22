@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class FormatDatePipe implements PipeTransform {
 
-	transform(value: any, locale:string = 'pt-BR'): any {
+	public transform(value: any, locale:string = 'pt-BR'): any {
 		if (value.length !== 10) {
 			return value
 		}

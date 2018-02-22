@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core'
 
 export class FormatCurrentPipe implements PipeTransform {
 
-	transform(value: any, locale: string = 'pt-BR', options:Object = { style: 'currency', currency: 'BRL' }): any {
+	public transform(value: any, locale: string = 'pt-BR', options:Object = { style: 'currency', currency: 'BRL' }): any {
 		return new Intl.NumberFormat(locale, options).format(value)
 	}
 

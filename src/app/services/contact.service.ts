@@ -6,6 +6,6 @@ export class ContactService {
 
     contacts:Array<Contact> = []
 
-    constructor() { }
+    public constructor() { }
 
 }

@@ -10,9 +10,9 @@ import { ContactService } from '../services/contact.service';
 
 export class ContactFormComponent implements OnInit {
 
-	id:number = 0
+	public id:number = 0
 
-	contact:Contact = {
+	public contact:Contact = {
 		id: null,
 		name: null,
 		email: null,
@@ -20,32 +20,32 @@ export class ContactFormComponent implements OnInit {
 	}
 
 	@Input()
-	contacts:Array<Contact> = []
+	public contacts:Array<Contact> = []
 
-	constructor(private contactService:ContactService) {
+	public constructor(private contactService:ContactService) {
         this.contacts = this.contactService.contacts
 	}
 
-	ngOnInit() { }
+	public ngOnInit() { }
 
-	send() {
+	public send() {
 		this.contacts.push(this.copy())
 		this.clear()
 	}
 
-	copy() {
+	private copy() {
 		let contact = Object.assign({}, this.contact)
 		contact.id = this.getId()
 
 		return contact
 	}
 
-	getId() {
+	private getId() {
 		this.id += 1
 		return this.id
 	}
 
-	clear() {
+	private clear() {
 		this.contact.id = null
 		this.contact.name = null
 		this.contact.email = null

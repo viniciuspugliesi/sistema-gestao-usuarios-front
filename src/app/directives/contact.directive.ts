@@ -8,7 +8,7 @@ export class ContactDirective {
 
     private _appContact
 
-    constructor(private el:ElementRef) {
+    public constructor(private el:ElementRef) {
         this.el.nativeElement.innerHTML += 'conteúdo inserido'
     }
 
@@ -22,14 +22,12 @@ export class ContactDirective {
         this.changeColor()
     }
 
-    // appContact:string
-
     @HostListener('click')
-    onclick() {
+    public onclick() {
         alert(this.appContact)
     }
 
-    changeColor() {
+    private changeColor() {
         this.el.nativeElement.style.color = this._appContact === 'Vinicius Pugliesi' ? 'blue' : 'red'
     }
 }

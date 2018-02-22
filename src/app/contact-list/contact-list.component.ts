@@ -10,15 +10,15 @@ import { ContactService } from '../services/contact.service';
 
 export class ContactListComponent implements OnInit {
 
-    contacts:Array<Contact> = []
+    public contacts:Array<Contact> = []
 
-    constructor(private contactService:ContactService) {
+    public constructor(private contactService:ContactService) {
         this.contacts = this.contactService.contacts
     }
 
-    ngOnInit() { }
+    public ngOnInit() { }
 
-    destroy(contact) {
+    public destroy(contact) {
         this.contacts.splice(this.contacts.indexOf(contact), 1);
     }
 }
