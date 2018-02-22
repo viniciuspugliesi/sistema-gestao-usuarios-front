@@ -30,7 +30,7 @@ export class ContactFormComponent implements OnInit {
 
 	public send() {
 		this.contacts.push(this.copy())
-		this.clear()
+		this.contact = new Contact()
 	}
 
 	private copy() {
@@ -43,12 +43,5 @@ export class ContactFormComponent implements OnInit {
 	private getId() {
 		this.id += 1
 		return this.id
-	}
-
-	private clear() {
-		this.contact.id = null
-		this.contact.name = null
-		this.contact.email = null
-		this.contact.message = null
 	}
 }
