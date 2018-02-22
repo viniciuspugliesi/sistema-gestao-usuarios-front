@@ -2,19 +2,14 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="btn"><a href="#">Enviar novo contato</a></li>
-                <li class="btn"><a href="#">Listar contatos</a></li>
-                <li class="btn"><a href="#">Busca por CEP</a></li>
+                <li class="btn"><a routerLink="/contacts/create">Enviar novo contato</a></li>
+                <li class="btn"><a routerLink="/contacts">Listar contatos</a></li>
+                <li class="btn"><a routerLink="/search-for-area-code">Busca por CEP</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <div class="container">
-    <app-contact-form></app-contact-form>
-
-    <br><br><br>
-
-    <app-contact-list></app-contact-list>
-    <!-- <app-address></app-address> -->
+    <router-outlet></router-outlet>
 </div>
