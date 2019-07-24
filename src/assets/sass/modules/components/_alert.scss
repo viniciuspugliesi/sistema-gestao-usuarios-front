@@ -1,0 +1,67 @@
+// Alert
+
+.alert-styled {
+    position: relative;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+
+    & i {
+        margin-right: 5px;
+        width: 25px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+
+    &--success {
+        border: 1px solid $alert-success--color;
+        border-left: 8px solid $alert-success--color;
+        color: $alert-success--color;
+    }
+
+    &--danger {
+        border: 1px solid $alert-danger--color;
+        border-left: 8px solid $alert-danger--color;
+        color: $alert-danger--color;
+    }
+
+    &--warning {
+        border: 1px solid $alert-warning--color;
+        border-left: 8px solid $alert-warning--color;
+        color: $alert-warning--color;
+    }
+
+    &--info {
+        border: 1px solid $alert-info--color;
+        border-left: 8px solid $alert-info--color;
+        color: $alert-info--color;
+    }
+
+    &--primary {
+        color: $alert-primary--color;
+        border: 1px solid $alert-primary--color;
+        border-left: 8px solid $alert-primary--color;
+    }
+
+    &--secondary {
+        color: $alert-secondary--color;
+        border: 1px solid $alert-secondary--color;
+        border-left: 8px solid $alert-secondary--color;
+    }
+
+    &--light {
+        color: #818182;
+        //color: $alert-light--color;
+        border: 1px solid $alert-light--color;
+        border-left: 8px solid $alert-light--color;
+    }
+
+    &--dark {
+        color: $alert-dark--color;
+        border: 1px solid $alert-dark--color;
+        border-left: 8px solid $alert-dark--color;
+    }
+}

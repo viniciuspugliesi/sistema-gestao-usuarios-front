@@ -1,0 +1,46 @@
+<div class="peers ai-s fxw-nw h-100vh">
+    <div class="peer peer-greed h-100 pos-r bgr-n bgpX-c bgpY-c bgsz-cv"
+         style="background-image: url('/assets/images/bg.png')">
+
+        <div class="bg-opacity"></div>
+    </div>
+
+    <div class="col-12 col-md-4 peer pX-40 h-100 bgc-white pos-r ps ps--active-y">
+        <div>
+            <div class="text-center mT-20">
+                <img alt="Logo" class="logo-img" src="/assets/images/logo-full.png" width="230px">
+            </div>
+
+            <div class="mT-50">
+                <form (submit)="sendFormUnverified()">
+
+                    <h2>Hello John Doe,</h2>
+
+                    <h4 class="fw-300 c-grey-900 mB-60">
+                        You have not activated your registration yet,
+                        <button class="btn btn-link p-0 fsz-md">click here</button>
+                        to receive a new email with the activation link.
+                    </h4>
+
+                    <p class="mT-60">
+                        If you have any questions, please visit our help page and / or our terms of use by clicking
+                        on the button below.
+                    </p>
+                </form>
+            </div>
+
+            <div class="mT-70">
+                <ul class="list-inline text-center mB-20">
+                    <li class="list-inline-item mX-20 mB-10">
+                        <a class="btn btn-outline-primary" routerLink="/login">Sign in with another account</a>
+                    </li>
+                </ul>
+
+                <hr>
+
+                >
+                <app-helpers-list></app-helpers-list>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="profile col-md-12">
+        <div class="profile-header">
+            <div class="profile-details">
+                <img alt="Profile" class="w-5r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg">
+
+                <div class="lh-100 ml-4">
+                    <h2 class="text-white m-0">Gael Fernandez</h2>
+                    <p class="text-muted">VP People Manager</p>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <span *ngIf="isEditRoute">
+                    <a routerLink="/profile" class="btn-shadow btn btn-outline-info m-10">
+                        Details account
+                    </a>
+                </span>
+                <span *ngIf="! isEditRoute">
+                    <a routerLink="/profile/edit" class="btn-shadow btn btn-outline-info m-10">
+                        <i class="fas fa-pencil-alt"></i> &nbsp; Edit data
+                    </a>
+                </span>
+
+                <div class="btn-group" role="group">
+                    <button aria-expanded="false" aria-haspopup="true"
+                            class="btn btn-outline-danger dropdown-toggle"
+                            data-toggle="dropdown" id="dropdown-profile-actions" type="button">
+                        Danger area
+                    </button>
+                    <div aria-labelledby="dropdown-profile-actions" class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Delete account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

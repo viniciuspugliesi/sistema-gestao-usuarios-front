@@ -1,0 +1,13 @@
+
+.tooltip {
+    & > .tooltip-inner {
+        padding: 5px 10px;
+        font-size: 15px;
+        //width: 300px;
+        max-width: 100%;
+    }
+
+    &.show {
+        opacity: 1;
+    }
+}

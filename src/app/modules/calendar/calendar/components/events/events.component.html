@@ -1,0 +1,129 @@
+<div class="bdrs-3 ov-h bgc-white bd events">
+    <div class="bgc-deep-purple-500 ta-c p-30">
+        <h1 class="fw-300 mB-5 lh-1 c-white">01<span class="fsz-def">st</span></h1>
+        <h3 class="c-white">Monday</h3>
+    </div>
+
+    <div class="pos-r">
+        <button class="mT-nv-50 pos-a r-10 t-2 btn cur-p bdrs-50p p-0 w-3r h-3r btn-warning"
+                data-target="#modal-calendar-edit"
+                data-toggle="modal">
+            <i class="fa fa-plus"></i>
+        </button>
+
+        <ul *ngIf="events.length; else empty" class="m-0 p-0 mT-20">
+            <li *ngFor="let event of events" class="bdB peers ai-c jc-sb fxw-nw events-list">
+                <div class="peer mL-15">
+                    <i class="far fa-clock c-indigo-500"></i>
+                </div>
+
+                <div class="td-n p-20 peers fxw-nw mR-20 peer-greed c-grey-900">
+                    <div class="peer">
+                        <span class="fw-600">{{ event.title }}</span>
+
+                        <div class="c-grey-700">
+                            {{ event.start | timestamp : 'dd mmm yy' }}
+                            <i *ngIf="event.end"> to {{ event.end | timestamp : 'dd mmm yy' }}</i>
+                        </div>
+
+                        <div class="c-grey-600">
+                            <i>{{ event.desc ? ' - ' + event.desc : '' }}</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="peers mR-15">
+                    <div class="peer">
+                        <a class="td-n c-deep-purple-500 cH-blue-500 fsz-md p-5" data-target="#modal-calendar-edit"
+                           data-toggle="modal" href=""
+                           prevent-default>
+                            <i class="fa fa-pencil-alt"></i>
+                        </a>
+                    </div>
+
+                    <div class="peer">
+                        <a (click)="deleteEvent(event)" class="td-n c-red-500 cH-blue-500 fsz-md p-5" href=""
+                           prevent-default>
+                            <i class="fa fa-trash-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<ng-template #empty>
+    <ul class="m-0 p-0 mT-20">
+        <li class="bdB peers ai-c jc-sb fxw-nw">
+            <div class="alert">no results found</div>
+        </li>
+    </ul>
+</ng-template>
+
+<div class="modal fade" id="modal-calendar-edit">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="bd p-15">
+                <h5 class="m-0">Add Event</h5>
+            </div>
+
+            <div class="modal-body">
+                <form class="mT-10">
+                    <div class="form-group form-group-label">
+                        <div class="input-group">
+                            <input type="email" name="title" value="" class="form-control"/>
+                            <label>Event title</label>
+                            <div class="form-line"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-label">
+                                <div class="input-group">
+                                    <input type="text" name="start" class="form-control datepicker"/>
+                                    <label>Start</label>
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="far fa-calendar-alt fa-lg"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-line"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group form-group-label">
+                                <div class="input-group">
+                                    <input type="text" name="end" class="form-control datepicker"/>
+                                    <label>End</label>
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="far fa-calendar-alt fa-lg"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-label">
+                        <div class="input-group">
+                            <textarea id="description" name="description" class="form-control bdc-grey-200"
+                                      rows='5'></textarea>
+                            <label for="description">Event description</label>
+                            <div class="form-line"></div>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <button class="btn btn-primary cur-p" data-dismiss="modal">Done</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

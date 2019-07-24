@@ -1,0 +1,14 @@
+.calendar {
+
+    .events {
+
+        .events-list {
+            transition: all 0.5s;
+
+            &:hover {
+                transition: all 0.5s;
+                background: #e5f4fd;
+            }
+        }
+    }
+}

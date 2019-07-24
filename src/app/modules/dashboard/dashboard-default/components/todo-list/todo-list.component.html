@@ -1,0 +1,29 @@
+<div class="bd bgc-white p-20">
+    <div class="layers">
+        <div class="layer w-100 mB-10">
+            <h5 class="lh-1">Todo List</h5>
+        </div>
+
+        <div class="layer w-100">
+            <ul class="list-task list-group" data-role="tasklist">
+                <li *ngFor="let todoList of list" class="list-group-item bdw-0" data-role="task">
+                    <div class="checkbox checkbox-circle checkbox-info peers ai-c">
+                        <input [id]="'todo-list' + todoList.id" class="peer" name="inputCheckboxesCall" type="checkbox">
+
+                        <label [attr.for]="'todo-list' + todoList.id" class=" peers peer-greed js-sb ai-c">
+                            <span class="peer peer-greed">
+                                {{ todoList.item }}
+                            </span>
+
+                            <span class="peer">
+                                <span class="badge badge-pill fl-r badge-success lh-0 p-10">
+                                    {{ todoList.badge }}
+                                </span>
+                              </span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

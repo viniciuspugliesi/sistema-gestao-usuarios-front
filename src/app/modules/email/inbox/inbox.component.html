@@ -1,0 +1,239 @@
+<div class="full-container">
+    <div class="email-app">
+        <div class="email-side-nav remain-height ov-h">
+            <div class="h-100 layers">
+                <div class="p-20 bgc-grey-100 layer w-100">
+                    <a class="btn btn-danger btn-block" routerLink="/emails/compose">New Message</a>
+                </div>
+
+                <div class="scrollable pos-r bdT layer w-100 fxg-1">
+                    <app-nav></app-nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="email-wrapper row remain-height bgc-white ov-h">
+            <div class="email-list h-100 layers">
+                <div class="layer w-100">
+                    <div class="bgc-grey-100 peers ai-c jc-sb p-20 fxw-nw">
+                        <div class="peer">
+                            <div class="btn-group" role="group">
+                                <a (click)="toggleEmailSidebar()"
+                                   class="email-side-toggle d-n@md+ btn bgc-white bdrs-2 mR-3 cur-p" href=""
+                                   prevent-default>
+                                    <i class="fa fa-bars"></i>
+                                </a>
+
+                                <button class="btn bgc-white bdrs-2 mR-3 cur-p">
+                                    <i class="fa fa-folder"></i>
+                                </button>
+
+                                <button class="btn bgc-white bdrs-2 mR-3 cur-p">
+                                    <i class="fa fa-tag"></i>
+                                </button>
+
+                                <div class="btn-group" role="group">
+                                    <button aria-expanded="false" aria-haspopup="true"
+                                            class="btn cur-p bgc-white no-after dropdown-toggle" data-toggle="dropdown"
+                                            id="btnGroupDrop1">
+                                        <i class="fa fa-ellipsis-h fa-lg"></i>
+                                    </button>
+
+                                    <ul aria-labelledby="btnGroupDrop1" class="dropdown-menu fsz-sm">
+                                        <li>
+                                            <a class="d-b td-n pY-5 pX-10 bgcH-grey-100 c-grey-700" href=""
+                                               prevent-default>
+                                                <i class="fa fa-trash-alt mR-10"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="d-b td-n pY-5 pX-10 bgcH-grey-100 c-grey-700" href=""
+                                               prevent-default>
+                                                <i class="fas fa-exclamation-triangle mR-10"></i>
+                                                <span>Mark as Spam</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="d-b td-n pY-5 pX-10 bgcH-grey-100 c-grey-700" href=""
+                                               prevent-default>
+                                                <i class="fa fa-star mR-10"></i>
+                                                <span>Star</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="peer">
+                            <div class="btn-group" role="group">
+                                <button class="fsz-xs btn bgc-white bdrs-2 mR-3 cur-p">
+                                    <i class="fa fa-angle-left fa-lg"></i>
+                                </button>
+
+                                <button class="fsz-xs btn bgc-white bdrs-2 mR-3 cur-p">
+                                    <i class="fa fa-angle-right fa-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layer w-100">
+                    <div class="bdT bdB">
+                        <input class="form-control m-0 bdw-0 pY-25 pX-20" placeholder="Search..." type="text">
+                    </div>
+                </div>
+
+                <div class="layer w-100 fxg-1 scrollable pos-r">
+                    <label class="w-100" for="email-inbox-1">
+                        <div class="email-list-item peers fxw-nw p-20 bdB bgcH-grey-100 cur-p">
+
+                            <div class="peer mR-10">
+                                <div class="checkbox checkbox-circle checkbox-info peers ai-c">
+                                    <input (change)="toggleMessage()" class="peer" id="email-inbox-1" type="checkbox">
+                                    <label class="peers peer-greed js-sb ai-c" for="email-inbox-1"></label>
+                                </div>
+                            </div>
+
+                            <div class="peer peer-greed ov-h">
+                                <div class="peers ai-c">
+                                    <div class="peer peer-greed">
+                                        <h5>John Doe</h5>
+                                    </div>
+                                    <div class="peer">
+                                        <small>1 min ago</small>
+                                    </div>
+                                </div>
+
+                                <h5 class="fsz-def tt-c c-grey-900">title goes here</h5>
+
+                                <span class="whs-nw w-100 ov-h tov-e d-b">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                </span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="email-content h-100">
+                <div class="h-100 scrollable pos-r">
+                    <div class="bgc-grey-100 peers ai-c jc-sb p-20 fxw-nw d-n@md+">
+                        <div class="peer">
+                            <div class="btn-group" role="group">
+                                <button (click)="toggleMessage()"
+                                        class="back-to-mailbox btn bgc-white bdrs-2 mR-3 cur-p">
+                                    <i class="fa fa-angle-left"></i>
+                                </button>
+
+                                <button class="btn bgc-white bdrs-2 mR-3 cur-p">
+                                    <i class="fa fa-folder"></i>
+                                </button>
+
+                                <button class="btn bgc-white bdrs-2 mR-3 cur-p">
+                                    <i class="fa fa-tag"></i>
+                                </button>
+
+                                <div class="btn-group" role="group">
+                                    <button aria-expanded="false" aria-haspopup="true"
+                                            class="btn cur-p bgc-white no-after dropdown-toggle" data-toggle="dropdown"
+                                            id="btnGroupDrop1">
+                                        <i class="fa fa-ellipsis-h fa-lg"></i>
+                                    </button>
+
+                                    <ul aria-labelledby="btnGroupDrop1" class="dropdown-menu fsz-sm">
+                                        <li>
+                                            <a class="d-b td-n pY-5 pX-10 bgcH-grey-100 c-grey-700" href=""
+                                               prevent-default>
+                                                <i class="fa fa-trash mR-10"></i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="d-b td-n pY-5 pX-10 bgcH-grey-100 c-grey-700" href=""
+                                               prevent-default>
+                                                <i class="fa fa-exclamation-triangle mR-10"></i>
+                                                <span>Mark as Spam</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="d-b td-n pY-5 pX-10 bgcH-grey-100 c-grey-700" href=""
+                                               prevent-default>
+                                                <i class="fa fa-star mR-10"></i>
+                                                <span>Star</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="peer">
+                            <div class="btn-group" role="group">
+                                <button class="fsz-xs btn bgc-white bdrs-2 mR-3 cur-p">
+                                    <i class="fa fa-angle-left"></i>
+                                </button>
+
+                                <button class="fsz-xs btn bgc-white bdrs-2 mR-3 cur-p">
+                                    <i class="fa fa-angle-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="email-content-wrapper">
+                        <!-- Header -->
+                        <div class="peers ai-c jc-sb pX-40 pY-30">
+                            <div class="peers peer-greed">
+                                <div class="peer mR-20">
+                                    <img alt="" class="bdrs-50p w-3r h-3r"
+                                         src="https://randomuser.me/api/portraits/men/11.jpg">
+                                </div>
+
+                                <div class="peer">
+                                    <small>Nov, 02 2017</small>
+                                    <h5 class="c-grey-900 mB-5">John Doe</h5>
+                                    <span>To: email@gmail.com</span>
+                                </div>
+                            </div>
+
+                            <div class="peer">
+                                <a class="btn btn-danger bdrs-50p p-15 lh-0" href="" prevent-default>
+                                    <i class="fa fa-reply"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="bdT pX-40 pY-30">
+                            <h4>Title of this email goes here</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

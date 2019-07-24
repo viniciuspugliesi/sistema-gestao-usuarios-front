@@ -1,0 +1,227 @@
+[
+    {
+        "name": "John Doe",
+        "image": "https://randomuser.me/api/portraits/men/1.jpg",
+        "status": "Online",
+        "conversations": [
+            {
+                "itsMine": false,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "Lorem Ipsum is simply dummy text of"
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "the printing and typesetting industry."
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "Lorem Ipsum has been the industry's"
+                    }
+                ]
+            },
+            {
+                "itsMine": true,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "Heloo"
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "??"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Moo Doe",
+        "image": "https://randomuser.me/api/portraits/men/2.jpg",
+        "status": "Away",
+        "conversations": [
+            {
+                "itsMine": false,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "Hello"
+                    }
+                ]
+            },
+            {
+                "itsMine": true,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "Hi"
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "At vero eos et accusam et justo duo dolores et ea rebum"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Adam Jones",
+        "image": "https://randomuser.me/api/portraits/men/3.jpg",
+        "status": "Offline",
+        "conversations": [
+            {
+                "itsMine": true,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "Lorem Ipsum is simply dummy text of"
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "umy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet"
+                    }
+                ]
+            },
+            {
+                "itsMine": false,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "Lorem ipsum dolor sit am"
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "??"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Mizo Doe",
+        "image": "https://randomuser.me/api/portraits/men/4.jpg",
+        "status": "Busy",
+        "conversations": [
+            {
+                "itsMine": true,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "The printing and typesetting industry."
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "Ero eos et accusam et justo duo dolores"
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "Bergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Albert Alfons",
+        "image": "https://randomuser.me/api/portraits/men/73.jpg",
+        "status": "Online",
+        "conversations": [
+            {
+                "itsMine": false,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "Tummy text of"
+                    }
+                ]
+            },
+            {
+                "itsMine": true,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "Eirmod tempor invidunt u"
+                    }
+                ]
+            },
+            {
+                "itsMine": false,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "Et, consetetur sadipscing el"
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "Sadipscing elitr, sed diam nonumy e"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Joachim Isabel",
+        "image": "https://randomuser.me/api/portraits/men/20.jpg",
+        "status": "Away",
+        "conversations": [
+            {
+                "itsMine": false,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "Augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consec"
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": " eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue du"
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "is eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, "
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ralf Peter",
+        "image": "https://randomuser.me/api/portraits/men/94.jpg",
+        "status": "Offline",
+        "conversations": [
+            {
+                "itsMine": true,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet cli"
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "..."
+                    },
+                    {
+                        "datetime": 1554830989,
+                        "message": "??"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Stephan Kirsten",
+        "image": "https://randomuser.me/api/portraits/men/82.jpg",
+        "status": "Busy",
+        "conversations": [
+            {
+                "itsMine": false,
+                "messages": [
+                    {
+                        "datetime": 1554830989,
+                        "message": "Sanctus sea sed ta"
+                    }
+                ]
+            }
+        ]
+    }
+]

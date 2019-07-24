@@ -1,0 +1,250 @@
+<nav class="sidebar">
+    <div class="sidebar-inner">
+        <!-- ### $Sidebar Header ### -->
+        <div class="sidebar-logo">
+            <div class="peers ai-c fxw-nw">
+                <div class="peer peer-greed">
+                    <a class="sidebar-link td-n" routerLink="/dashboard">
+                        <div class="peers ai-c fxw-nw">
+                            <div class="peer">
+                                <div class="logo">
+                                    <img alt="Logo" src="/assets/images/logo-partial.png">
+                                </div>
+                            </div>
+                            <div class="peer peer-greed logo--completed">
+                                <img alt="Logo" src="/assets/images/logo-partial-2.png">
+                                <!--<h5 class="lh-1 mB-0 logo-text">Adminator</h5>-->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="peer mL-10">
+                    <div class="mobile-toggle">
+                        <a (click)="toggleMenu()" class="td-n" href="#" prevent-default>
+                            <i class="fa fa-arrow-circle-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ### $Sidebar Menu ### -->
+        <ul class="sidebar-menu scrollable pos-r">
+            <li class="nav-item mT-10">
+                <a class="sidebar-link" routerLink="/dashboard" routerLinkActive="active">
+                    <span class="icon-holder">
+                        <i class="c-blue-500 fa fa-home"></i>
+                    </span>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class='sidebar-link' routerLink="/emails" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <span class="icon-holder">
+                        <i class="c-brown-500 fa fa-envelope"></i>
+                    </span>
+                    <span class="title">Email</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class='sidebar-link' routerLink="/emails/compose" routerLinkActive="active">
+                    <span class="icon-holder">
+                        <i class="c-blue-500 fa fa-share-square"></i>
+                    </span>
+                    <span class="title">Compose</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class='sidebar-link' routerLink="/calendar" routerLinkActive="active">
+                    <span class="icon-holder">
+                        <i class="c-deep-orange-500 fa fa-calendar-alt"></i>
+                    </span>
+                    <span class="title">Calendar</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class='sidebar-link' routerLink="/chat" routerLinkActive="active">
+                    <span class="icon-holder">
+                        <i class="c-deep-purple-500 fa fa-comments"></i>
+                    </span>
+                    <span class="title">Chat</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class='sidebar-link' routerLink="/charts" routerLinkActive="active">
+                    <span class="icon-holder">
+                        <i class="c-indigo-500 fa fa-chart-bar"></i>
+                    </span>
+                    <span class="title">Charts</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class='sidebar-link' routerLink="/forms" routerLinkActive="active">
+                    <span class="icon-holder">
+                        <i class="c-light-blue-500 fa fa-pencil-alt"></i>
+                    </span>
+                    <span class="title">Forms</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="sidebar-link" routerLink="/ui-elements" routerLinkActive="active">
+                    <span class="icon-holder">
+                        <i class="c-pink-500 fas fa-palette"></i>
+                    </span>
+                    <span class="title">UI Elements</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="#" prevent-default>
+                    <span class="icon-holder">
+                        <i class="c-orange-500 fa fa-list"></i>
+                    </span>
+                    <span class="title">Tables</span>
+                    <span class="arrow">
+                        <i class="fa fa-angle-right fa-lg"></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu dropdown-vertical-line">
+                    <li>
+                        <a class='sidebar-link' routerLink="/tables/basic-tables" routerLinkActive="active">
+                            Basic Table
+                        </a>
+                    </li>
+                    <li>
+                        <a class='sidebar-link' routerLink="/tables/advanced-tables" routerLinkActive="active">
+                            Advanced Table
+                        </a>
+                    </li>
+                    <li>
+                        <a class='sidebar-link' routerLink="/tables/data-tables" routerLinkActive="active">
+                            Data Table
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="#" prevent-default>
+                    <span class="icon-holder">
+                        <i class="c-purple-500 fa fa-map"></i>
+                    </span>
+                    <span class="title">Maps</span>
+                    <span class="arrow">
+                        <i class="fa fa-angle-right fa-lg"></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu dropdown-vertical-line">
+                    <li>
+                        <a class='sidebar-link' routerLink="/maps/google-maps" routerLinkActive="active">
+                            Google Map
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="#" prevent-default>
+                    <span class="icon-holder">
+                        <i class="c-red-500 far fa-copy"></i>
+                    </span>
+                    <span class="title">Pages</span>
+                    <span class="arrow">
+                        <i class="fa fa-angle-right fa-lg"></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu dropdown-vertical-line">
+                    <li>
+                        <a class='sidebar-link' routerLink="/page-blank" routerLinkActive="active">
+                            Blank
+                        </a>
+                    </li>
+                    <li>
+                        <a class='sidebar-link' routerLink="/error/401" routerLinkActive="active">
+                            401
+                        </a>
+                    </li>
+                    <li>
+                        <a class='sidebar-link' routerLink="/error/403" routerLinkActive="active">
+                            403
+                        </a>
+                    </li>
+                    <li>
+                        <a class='sidebar-link' routerLink="/error/404" routerLinkActive="active">
+                            404
+                        </a>
+                    </li>
+                    <li>
+                        <a class='sidebar-link' routerLink="/error/500" routerLinkActive="active">
+                            500
+                        </a>
+                    </li>
+                    <li>
+                        <a class='sidebar-link' routerLink="/login" routerLinkActive="active">
+                            Sign In
+                        </a>
+                    </li>
+                    <li>
+                        <a class='sidebar-link' routerLink="/create-account" routerLinkActive="active">
+                            Sign Up
+                        </a>
+                    </li>
+                    <li>
+                        <a class='sidebar-link' routerLink="/forgot-password" routerLinkActive="active">
+                            Forgot Password
+                        </a>
+                    </li>
+                    <li>
+                        <a class='sidebar-link' routerLink="/reset-password" routerLinkActive="active">
+                            Reset Password
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown mB-30">
+                <a class="dropdown-toggle" href="#" prevent-default>
+                    <span class="icon-holder">
+                        <i class="c-teal-500 fa fa-list-ul"></i>
+                    </span>
+                    <span class="title">Multiple Levels</span>
+                    <span class="arrow">
+                        <i class="fa fa-angle-right fa-lg"></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu dropdown-vertical-line">
+                    <li class="nav-item dropdown">
+                        <a href="#" prevent-default>
+                            <span>Menu Item</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" prevent-default>
+                            <span>Menu Item</span>
+                            <span class="arrow">
+                                <i class="fa fa-angle-right fa-lg"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#" prevent-default>Menu Item</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" prevent-default>
+                                    <span>Menu Item</span>
+                                    <span class="arrow">
+                                <i class="fa fa-angle-right fa-lg"></i>
+                            </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#" prevent-default>Menu Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" prevent-default>Menu Item</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

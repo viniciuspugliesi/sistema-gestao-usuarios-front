@@ -1,0 +1,31 @@
+<div class="peer bdR" id="chat-sidebar">
+    <div class="layers h-100">
+        <!-- Search -->
+        <div class="bdB layer w-100">
+            <input (keyup)="search($event)" class="form-constrol p-15 bdrs-0 w-100 bdw-0" name="chatSearch"
+                   placeholder="Search contacts..."
+                   type="text">
+        </div>
+
+        <!-- List -->
+        <div class="layer w-100 fxg-1 scrollable pos-r">
+            <div *ngIf="contacts.length; else empty">
+                <div (click)="showConversation(contact)" *ngFor="let contact of contacts"
+                     class="peers fxw-nw ai-c p-20 bdB bgc-white bgcH-grey-50 cur-p">
+                    <div class="peer">
+                        <img [src]="contact.image" alt="" class="w-3r h-3r bdrs-50p">
+                    </div>
+
+                    <div class="peer peer-greed pL-20">
+                        <h5 class="mB-0 lh-1 fw-400">{{ contact.name }}</h5>
+                        <small [ngClass]="handlerClassColor(contact)" class="lh-1">{{ contact.status}}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #empty>
+    <div class="alert">No results found.</div>
+</ng-template>

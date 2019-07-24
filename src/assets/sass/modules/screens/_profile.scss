@@ -1,0 +1,23 @@
+.profile {
+    padding-left: 40px;
+    padding-right: 40px;
+
+    .profile-header {
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        color: $default-text-color;
+        border-radius: 0.25rem;
+        margin-bottom: 1rem;
+        margin-top: 20px;
+
+        .profile-details {
+            display: flex;
+        }
+
+        .profile-actions {
+        }
+    }
+}

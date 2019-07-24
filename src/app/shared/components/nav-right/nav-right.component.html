@@ -1,0 +1,13 @@
+<div [ngStyle]="{width: width}" class="app-drawer-wrapper">
+    <div class="drawer-nav-btn">
+        <button (click)="close()" class="btn btn-default">
+            <i class="c-blue-500 fa fa-times fa-lg"></i>
+        </button>
+    </div>
+
+    <div class="drawer-content-wrapper">
+        <ng-content></ng-content>
+    </div>
+</div>
+
+<div class="app-drawer-overlay animated fadeIn d-none" (click)="close()"></div>

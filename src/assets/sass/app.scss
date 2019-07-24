@@ -1,0 +1,40 @@
+// ---------------------------------------------
+//  Variables
+// ---------------------------------------------
+@import 'modules/variables/index';
+// ---------------------------------------------
+//  Tools
+// ---------------------------------------------
+@import 'modules/tools/index';
+// ---------------------------------------------
+//  External modules/vendor
+// ---------------------------------------------
+@import "~bootstrap/scss/bootstrap";
+@import "~datatables.net-dt/css/jquery.dataTables.min.css";
+@import "~bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+@import '~@fullcalendar/list/main.css';
+// ---------------------------------------------
+//  Generic
+// ---------------------------------------------
+@import 'modules/generic/index';
+// ---------------------------------------------
+//  All components
+// ---------------------------------------------
+@import 'modules/components/index';
+// ---------------------------------------------
+//  Screens
+// ---------------------------------------------
+@import 'modules/screens/index';
+// ---------------------------------------------
+//  Utils
+// ---------------------------------------------
+@import 'modules/utils/index';
+// ---------------------------------------------
+//  Overwrite vendor
+// ---------------------------------------------
+@import "modules/vendor/index";

@@ -1,0 +1,318 @@
+// ---------------------------------------------------------
+// @TOC
+
+// + @Topbar
+// + @Collapsed State
+
+// ---------------------------------------------------------
+// @Topbar
+// ---------------------------------------------------------
+
+.header {
+    background-color: $default-white;
+    border-bottom: 1px solid $border-color;
+    display: block;
+    margin-bottom: 0;
+    padding: 0;
+    position: fixed;
+    transition: all 0.2s ease;
+    width: calc(100% - #{$offscreen-size});
+    z-index: 800;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+
+    @include to($breakpoint-md) {
+        width: 100%;
+    }
+
+    @include between($breakpoint-md, $breakpoint-xl) {
+        width: calc(100% - #{$collapsed-size});
+    }
+
+    .header-container {
+        @include clearfix;
+
+        height: $header-height;
+
+        .nav-left,
+        .nav-right {
+            list-style: none;
+            margin-bottom: 0;
+            padding-left: 0;
+            position: relative;
+
+            > li {
+                float: left;
+
+                > a {
+                    color: $default-text-color;
+                    display: block;
+                    line-height: $header-height;
+                    min-height: $header-height;
+                    padding: 0 15px;
+                    transition: all 0.2s ease-in-out;
+
+                    i {
+                        font-size: 17px;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        color: $default-dark;
+                        text-decoration: none;
+                    }
+
+                    @include to($breakpoint-md) {
+                        padding: 0 15px;
+                    }
+                }
+            }
+
+            .languages {
+                .active {
+                    background: $md-black-10;
+                }
+            }
+
+            .notifications {
+                position: relative;
+
+                .counter {
+                    background-color: $default-danger;
+                    border-radius: 50px;
+                    color: $default-white;
+                    font-size: 10px;
+                    line-height: 1;
+                    padding: 3px 5.5px;
+                    position: absolute;
+                    right: 6px;
+                    top: 12px;
+                }
+
+                .dropdown-menu {
+                    min-width: 350px;
+                    padding: 0;
+
+                    @include to($breakpoint-sm) {
+                        max-width: 300px;
+                    }
+                }
+            }
+
+            .profiles {
+                position: relative;
+                margin-right: 15px;
+
+                &.vertical-divider {
+                    margin-left: 15px;
+
+                    &::before {
+                        position: absolute;
+                        left: -1px;
+                        top: 50%;
+                        background: #dee2e6;
+                        width: 1px;
+                        height: 30px;
+                        margin-top: -15px;
+                        content: '';
+                    }
+                }
+
+                .dropdown-menu {
+                    min-width: 22rem;
+                    padding: 0;
+
+                    @include to($breakpoint-sm) {
+                        max-width: 300px;
+                    }
+
+                    li {
+                        &:hover .text {
+                            color: $grey-900;
+                        }
+
+                        .text {
+                            color: $grey-700;
+                        }
+                    }
+
+                    .dropdown-menu-header {
+                        color: #fff;
+                        margin-top: -.65rem;
+                        margin-bottom: .65rem;
+                        position: relative;
+                        z-index: 6;
+
+                        .dropdown-menu-header-inner {
+                            margin: -1px -1px 0;
+                            padding: 1.5rem .5rem;
+                            position: relative;
+
+                            .menu-header-image {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                height: 100%;
+                                width: 100%;
+                                z-index: 8;
+                                opacity: .25;
+                                filter: grayscale(80%);
+                                background-size: cover;
+                            }
+
+                            .menu-header-content {
+                                text-align: center;
+                                position: relative;
+                                z-index: 10;
+
+                                &.text-left {
+                                    padding-left: .5rem;
+                                }
+
+                                .widget-content {
+                                    padding: 1rem;
+                                    flex-direction: row;
+                                    align-items: center;
+
+                                    .widget-content-wrapper {
+                                        display: flex;
+                                        flex: 1;
+                                        position: relative;
+                                        align-items: center;
+
+                                        .widget-content-left .widget-heading {
+                                            opacity: .8;
+                                            font-weight: bold;
+                                        }
+
+                                        .widget-content-right {
+                                            margin-left: auto;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .dropdown-menu {
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+            display: block;
+            margin: 0;
+            transform-origin: top right;
+            transform: scale(0, 0);
+            transition: transform 0.15s ease-out;
+
+            .divider {
+                border-bottom: 1px solid $border-color;
+                height: 1px;
+                overflow: hidden;
+            }
+
+            > li {
+                > a {
+                    transition: all 0.2s ease-out;
+                }
+            }
+        }
+
+        .show {
+            .dropdown-menu {
+                transform: scale(1, 1);
+            }
+        }
+
+        .nav-left {
+            float: left;
+            //margin-left: 15px;
+        }
+
+        .nav-right {
+            float: right;
+
+            .dropdown-menu {
+                left: auto;
+                right: 0;
+
+                > li {
+                    width: 100%;
+
+                    > a {
+                        line-height: 2.5;
+                        min-height: auto;
+                        padding: 10px 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .search-box {
+        .search-icon-close {
+            display: none;
+        }
+
+        &.active {
+            .search-icon {
+                display: none;
+            }
+
+            .search-icon-close {
+                display: inline-block;
+            }
+        }
+    }
+
+    .search-input {
+        border-bottom: 1px solid $md-dark-text-dividers;
+        display: none;
+
+        &.active {
+            display: inline-block;
+        }
+
+        input {
+            background-color: transparent;
+            border: 0;
+            box-shadow: none;
+            font-size: 18px;
+            height: 40px;
+            margin-top: 12px;
+            outline: none;
+            padding: 5px;
+
+            @include to($breakpoint-sm) {
+                width: 85px;
+            }
+
+            @include to(420px) {
+                width: 220px;
+            }
+
+            @include placeholder {
+                color: lighten($default-text-color, 20%);
+                font-style: italic;
+            }
+        }
+    }
+}
+
+// ---------------------------------------------------------
+// @Collapsed State
+// ---------------------------------------------------------
+
+.is-collapsed {
+    .header {
+        width: calc(100% - #{$collapsed-size});
+
+        @include to($breakpoint-md) {
+            width: 100%;
+        }
+
+        @include between($breakpoint-md, $breakpoint-xl) {
+            width: calc(100% - #{$offscreen-size});
+        }
+    }
+}
