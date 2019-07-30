@@ -28,14 +28,10 @@
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
-                            "node_modules/datatables.net/js/jquery.dataTables.min.js",
                             "node_modules/popper.js/dist/umd/popper.min.js",
-                            "node_modules/jquery-sparkline/jquery.sparkline.min.js",
                             "node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
                             "node_modules/moment/min/moment.min.js",
-                            "node_modules/bootstrap/dist/js/bootstrap.min.js",
-                            "node_modules/easy-pie-chart/dist/jquery.easypiechart.min.js",
-                            "src/assets/js/utils.js"
+                            "node_modules/bootstrap/dist/js/bootstrap.min.js"
                         ]
                     },
                     "configurations": {
@@ -98,13 +94,10 @@
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
-                            "node_modules/datatables.net/js/jquery.dataTables.min.js",
                             "node_modules/popper.js/dist/umd/popper.min.js",
-                            "node_modules/jquery-sparkline/jquery.sparkline.min.js",
                             "node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
                             "node_modules/moment/min/moment.min.js",
-                            "node_modules/bootstrap/dist/js/bootstrap.min.js",
-                            "node_modules/easy-pie-chart/dist/jquery.easypiechart.min.js"
+                            "node_modules/bootstrap/dist/js/bootstrap.min.js"
                         ]
                     }
                 },

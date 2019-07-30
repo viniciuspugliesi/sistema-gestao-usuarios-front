@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
+import {environment} from '../../../../environments/environment';
 
 @Component({
     selector: 'app-unauthorized',
@@ -11,7 +12,7 @@ export class UnauthorizedComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.title.setTitle('Unauthorized - Administrator');
+        this.title.setTitle('Unauthorized - ' + environment.applicationName);
     }
 
 }

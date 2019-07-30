@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
+import {environment} from '../../../../environments/environment';
 
 declare let $: any;
 
@@ -13,7 +14,7 @@ export class InboxComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.title.setTitle('Inbox email - Administrator');
+        this.title.setTitle('Inbox email - ' + environment.applicationName);
     }
 
     toggleEmailSidebar() {

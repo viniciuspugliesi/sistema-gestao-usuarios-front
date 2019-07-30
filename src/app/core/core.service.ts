@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {ActivationEnd, NavigationEnd, NavigationStart, Router} from '@angular/router';
+import {ActivationEnd, NavigationEnd, NavigationStart, NavigationCancel, Router} from '@angular/router';
 import PerfectScrollbar from 'perfect-scrollbar';
 import {BehaviorSubject, Observable} from 'rxjs';
 
@@ -10,6 +10,11 @@ export class CoreService {
     private loaderStatus$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
     constructor(private router: Router) {
+        this.watchRouter();
+        this.focusSideBarItem();
+    }
+
+    watchRouter(): void {
         this.router.events.subscribe(event => {
             if (event instanceof NavigationStart || event instanceof ActivationEnd) {
                 this.setLoader(true);
@@ -21,8 +26,12 @@ export class CoreService {
                 let self = this;
                 setTimeout(function() {
                     self.setLoader(false);
-                    $('body')[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    $('body')[0].scrollIntoView({behavior: 'smooth', block: 'start'});
                 }, 600);
+            }
+
+            if (event instanceof NavigationCancel) {
+                this.router.navigate(['/error/401']);
             }
         });
     }
@@ -44,11 +53,11 @@ export class CoreService {
         return this.loaderStatus$.asObservable();
     }
 
-    reloadPopover() {
+    reloadPopover(): void {
         $('[data-toggle="popover"]').popover();
     }
 
-    reloadTooltip() {
+    reloadTooltip(): void {
         $('[data-toggle="tooltip"]').tooltip({
             template: '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
         });
@@ -101,7 +110,7 @@ export class CoreService {
     }
 
     reloadInputPassword() {
-        $('.input-password').click(function() {
+        $(document).on('click', '.input-password', function() {
             let i = $(this).find('i');
             let input = $(this).parent().parent().parent().find('input');
 
@@ -121,5 +130,17 @@ export class CoreService {
 
     reloadDatepicker() {
         $('.datepicker').datepicker();
+    }
+
+    focusSideBarItem() {
+        let parentRoute = $('nav.sidebar .sidebar-menu a.active').parent().parent();
+
+        if (parentRoute.is('ul.dropdown-menu')) {
+            parentRoute.parent().addClass('open');
+        }
+
+        $(document).on('click', '.mobile-toggle-nav', function() {
+            $(this).toggleClass('is-active');
+        });
     }
 }

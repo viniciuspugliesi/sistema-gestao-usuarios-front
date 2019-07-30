@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Contact} from '../../../shared/domain/contact';
+import {Contact} from '../../../shared/models/contact';
 
 @Component({
     selector: 'app-chat',

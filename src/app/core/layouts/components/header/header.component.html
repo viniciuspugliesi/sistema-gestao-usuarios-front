@@ -208,7 +208,8 @@
             </li>
 
             <li class="profiles dropdown vertical-divider">
-                <a class="dropdown-toggle no-after peers fxw-nw ai-c lh-1 mL-10" data-toggle="dropdown" href="#" prevent-default>
+                <a class="dropdown-toggle no-after peers fxw-nw ai-c lh-1 mL-10" data-toggle="dropdown" href="#"
+                   prevent-default>
                     <div class="peer mR-10">
                         <img alt="Profile" class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg">
                     </div>
@@ -230,8 +231,8 @@
                                 <div class="widget-content p-0">
                                     <div class="widget-content-wrapper">
                                         <div class="widget-content-left mr-3">
-                                            <img class="w-3r bdrs-50p"
-                                                 src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
+                                            <img alt=""
+                                                 class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg">
                                         </div>
                                         <div class="widget-content-left">
                                             <span class="widget-heading">Gael Fernandez</span>
@@ -239,7 +240,7 @@
                                             <small class="widget-subheading opacity-8">VP People Manager</small>
                                         </div>
                                         <div class="widget-content-right mr-2">
-                                            <a routerLink="/login" class="btn btn-dark">
+                                            <a href="#" prevent-default (click)="logout()" class="btn btn-dark">
                                                 Logout
                                             </a>
                                         </div>
@@ -254,13 +255,13 @@
                             <h6 class="lh-1">Quick access</h6>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/chat" class="nav-link">
+                            <a class="nav-link" routerLink="/chat">
                                 Chat
                                 <span class="float-right badge badge-info font-14">8</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/" class="nav-link">
+                            <a class="nav-link" routerLink="/">
                                 Change Password
                             </a>
                         </li>
@@ -269,24 +270,24 @@
                             <h6 class="lh-1">My Account</h6>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/profile" class="nav-link">
+                            <a class="nav-link" routerLink="/profile">
                                 Profile
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/settings" class="nav-link">
+                            <a class="nav-link" routerLink="/settings">
                                 Settings
                                 <span class="float-right badge badge-success font-14">New</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/emails" class="nav-link">
+                            <a class="nav-link" routerLink="/emails">
                                 Messages
                                 <span class="float-right badge badge-warning font-14">512</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/logs" class="nav-link">
+                            <a class="nav-link" routerLink="/logs">
                                 Logs
                             </a>
                         </li>

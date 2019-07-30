@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Contact} from '../../../../../shared/domain/contact';
+import {Contact} from '../../../../../shared/models/contact';
 import {ContactListService} from './contact-list.service';
 
 @Component({

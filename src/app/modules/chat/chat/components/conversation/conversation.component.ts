@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Contact} from '../../../../../shared/domain/contact';
+import {Contact} from '../../../../../shared/models/contact';
 import {ConversationService} from './conversation.service';
 import {CoreService} from '../../../../../core/core.service';
 

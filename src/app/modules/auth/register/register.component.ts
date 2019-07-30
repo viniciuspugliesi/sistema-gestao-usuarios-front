@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
+import {environment} from '../../../../environments/environment';
 
 @Component({
     selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.title.setTitle('Create account - Administrator');
+        this.title.setTitle('Create account - ' + environment.applicationName);
     }
 
     sendRegisterForm() {

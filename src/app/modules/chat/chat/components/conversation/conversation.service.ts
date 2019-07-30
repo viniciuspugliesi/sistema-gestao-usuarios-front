@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Contact} from '../../../../../shared/domain/contact';
-import {Message} from '../../../../../shared/domain/message';
-import {Conversation} from '../../../../../shared/domain/conversation';
+import {Contact} from '../../../../../shared/models/contact';
+import {Message} from '../../../../../shared/models/message';
+import {Conversation} from '../../../../../shared/models/conversation';
 
 @Injectable()
 export class ConversationService {

@@ -274,6 +274,7 @@
         position: absolute;
         top: 4px;
         width: 100%;
+        z-index: 3;
     }
 
     textarea {
@@ -321,7 +322,7 @@
             }
 
             & ~ label {
-                transform: scale(.75) translateY(-35px);
+                transform: scale(.75) translateY(-24px);
             }
         }
     }
@@ -360,15 +361,34 @@
         margin-top: 38px;
     }
 
+    .form-text-error {
+        display: none;
+        color: $alert-danger--color;
+    }
+
     &.error {
         border-bottom-color: $alert-danger--color;
-        margin-bottom: 45px;
+        margin-bottom: 50px;
 
         label {
             color: $alert-danger--color;
         }
 
-        .form-text {
+        .form-control {
+            &:focus ~ label {
+                color: $alert-danger--color;
+            }
+        }
+
+        .form-line {
+            background-color: $alert-danger--color;
+        }
+
+        .form-text-error {
+            display: block;
+        }
+
+        i {
             color: $alert-danger--color;
         }
     }

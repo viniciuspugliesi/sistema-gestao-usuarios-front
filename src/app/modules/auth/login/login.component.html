@@ -16,7 +16,7 @@
             <form (submit)="sendLoginForm()">
                 <div class="form-group form-group-label">
                     <div class="input-group">
-                        <input class="form-control" name="email" type="email" value=""/>
+                        <input type="email" name="email" [(ngModel)]="user.email" class="form-control" />
                         <label>Enter your email</label>
                         <div class="input-group-prepend">
                             <div class="input-group-text input-tooltip" data-toggle="tooltip"
@@ -25,12 +25,13 @@
                             </div>
                         </div>
                         <div class="form-line"></div>
+                        <small class="form-text form-text-error"></small>
                     </div>
                 </div>
 
                 <div class="form-group form-group-label">
                     <div class="input-group">
-                        <input class="form-control" name="password" type="password"/>
+                        <input type="password" name="password" [(ngModel)]="user.password" class="form-control" />
                         <label>Enter your password</label>
                         <div class="input-group-prepend">
                             <div class="input-group-text input-password">
@@ -38,6 +39,7 @@
                             </div>
                         </div>
                         <div class="form-line"></div>
+                        <small class="form-text form-text-error"></small>
                     </div>
                 </div>
 

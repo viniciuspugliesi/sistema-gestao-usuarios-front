@@ -9,13 +9,12 @@ import {NumberToHourPipe} from './pipes/number-to-hour/number-to-hour.pipe';
 import {PricePipe} from './pipes/price/price.pipe';
 import {PreventDefaultDirective} from './directives/prevent-default/prevent-default.directive';
 import {ArrayHelper} from './helpers/array-helper';
-import {APIInterceptor, HTTPStatus} from './http/interceptors/api-interceptor';
 import {NumberHelper} from './helpers/number-helper';
 import {DateTimeHelper} from './helpers/date-time-helper';
 import {MoneyHelper} from './helpers/money-helper';
-import {RedirectIfAuthenticatedGuard} from './guards/redirect-if-authenticated/redirect-if-authenticated.guard';
-import {RedirectIfNotAuthenticatedGuard} from './guards/redirect-if-not-authenticated/redirect-if-not-authenticated.guard';
 import {NavRightComponent} from './components/nav-right/nav-right.component';
+import {ModalService} from './components/modal/modal.service';
+import {ModalComponent} from './components/modal/modal.component';
 
 @NgModule({
     imports: [
@@ -31,6 +30,7 @@ import {NavRightComponent} from './components/nav-right/nav-right.component';
         PreventDefaultDirective,
         NumberDirective,
         NavRightComponent,
+        ModalComponent,
     ],
     exports: [
         PricePipe,
@@ -41,16 +41,14 @@ import {NavRightComponent} from './components/nav-right/nav-right.component';
         PreventDefaultDirective,
         NumberDirective,
         NavRightComponent,
+        ModalComponent,
     ],
     providers: [
-        HTTPStatus,
-        APIInterceptor,
         NumberHelper,
         MoneyHelper,
         ArrayHelper,
         DateTimeHelper,
-        RedirectIfAuthenticatedGuard,
-        RedirectIfNotAuthenticatedGuard,
+        ModalService,
     ]
 })
 export class SharedModule {

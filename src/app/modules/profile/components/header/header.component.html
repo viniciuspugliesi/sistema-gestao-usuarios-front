@@ -12,12 +12,12 @@
 
             <div class="profile-actions">
                 <span *ngIf="isEditRoute">
-                    <a routerLink="/profile" class="btn-shadow btn btn-outline-info m-10">
+                    <a class="btn-shadow btn btn-outline-info m-10" routerLink="/profile">
                         Details account
                     </a>
                 </span>
                 <span *ngIf="! isEditRoute">
-                    <a routerLink="/profile/edit" class="btn-shadow btn btn-outline-info m-10">
+                    <a class="btn-shadow btn btn-outline-info m-10" routerLink="/profile/edit">
                         <i class="fas fa-pencil-alt"></i> &nbsp; Edit data
                     </a>
                 </span>

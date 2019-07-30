@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
+import {environment} from '../../../../environments/environment';
 
 @Component({
     selector: 'app-unverified',
@@ -12,7 +13,7 @@ export class UnverifiedComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.title.setTitle('Unverified - Administrator');
+        this.title.setTitle('Unverified - ' + environment.applicationName);
     }
 
     sendFormUnverified() {

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
+import {environment} from '../../../../environments/environment';
 
 @Component({
     selector: 'app-reset-password',
@@ -12,7 +13,7 @@ export class ResetPasswordComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.title.setTitle('Reset password - Administrator');
+        this.title.setTitle('Reset password - ' + environment.applicationName);
     }
 
     sendForgotPasswordForm() {

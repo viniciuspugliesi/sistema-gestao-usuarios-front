@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {AuthSecurityService} from '../../../security/auth-security.service';
+import {Router} from '@angular/router';
+import {AuthService} from '../../../../modules/auth/auth.service';
 
 declare let $: any;
 
@@ -8,18 +11,27 @@ declare let $: any;
 })
 export class HeaderComponent implements OnInit {
 
-    constructor() {
+    public constructor(private authSecurityService: AuthSecurityService,
+                       private authService: AuthService,
+                       private router: Router) {
     }
 
-    ngOnInit() {
+    public ngOnInit(): void {
     }
 
-    toggleMenu() {
+    public toggleMenu(): void {
         $('.app').toggleClass('is-collapsed');
     }
 
-    searchToggle() {
+    public searchToggle(): void {
         $('.search-box, .search-input').toggleClass('active');
         $('.search-input input').focus();
+    }
+
+    public logout(): void {
+        this.authService.logout().subscribe(() => {
+            this.authSecurityService.logout();
+            this.router.navigate(['/login']);
+        });
     }
 }
