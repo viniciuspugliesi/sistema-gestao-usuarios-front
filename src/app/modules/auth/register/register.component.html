@@ -18,15 +18,16 @@
             <form (submit)="sendRegisterForm()">
                 <div class="form-group form-group-label">
                     <div class="input-group">
-                        <input class="form-control" name="name" type="text" value=""/>
+                        <input [(ngModel)]="user.name" class="form-control" name="name" type="text"/>
                         <label>Enter your name</label>
                         <div class="form-line"></div>
+                        <small class="form-text form-text-error"></small>
                     </div>
                 </div>
 
                 <div class="form-group form-group-label">
                     <div class="input-group">
-                        <input class="form-control" name="email" type="email" value=""/>
+                        <input [(ngModel)]="user.email" class="form-control" name="email" type="email"/>
                         <label>Enter your email</label>
                         <div class="input-group-prepend">
                             <div class="input-group-text input-tooltip" data-toggle="tooltip"
@@ -35,12 +36,13 @@
                             </div>
                         </div>
                         <div class="form-line"></div>
+                        <small class="form-text form-text-error"></small>
                     </div>
                 </div>
 
                 <div class="form-group form-group-label">
                     <div class="input-group">
-                        <input class="form-control" name="password" type="password"/>
+                        <input [(ngModel)]="user.password" class="form-control" name="password" type="password"/>
                         <label>Enter your password</label>
                         <div class="input-group-prepend">
                             <div class="input-group-text input-password">
@@ -48,12 +50,14 @@
                             </div>
                         </div>
                         <div class="form-line"></div>
+                        <small class="form-text form-text-error"></small>
                     </div>
                 </div>
 
                 <div class="form-group form-group-label">
                     <div class="input-group">
-                        <input class="form-control" name="password" type="password"/>
+                        <input [(ngModel)]="user.passwordConfirmation" class="form-control" name="passwordConfirmation"
+                               type="password"/>
                         <label>Repeat your password</label>
                         <div class="input-group-prepend">
                             <div class="input-group-text input-password">
@@ -61,6 +65,7 @@
                             </div>
                         </div>
                         <div class="form-line"></div>
+                        <small class="form-text form-text-error"></small>
                     </div>
                 </div>
 

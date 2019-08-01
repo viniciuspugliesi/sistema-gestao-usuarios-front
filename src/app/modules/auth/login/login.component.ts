@@ -6,8 +6,6 @@ import {AuthService} from '../auth.service';
 import {User} from '../../../shared/models/user';
 import {AuthSecurityService} from '../../../core/security/auth-security.service';
 
-declare let $: any;
-
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html'
@@ -27,8 +25,7 @@ export class LoginComponent implements OnInit {
     }
 
     sendLoginForm() {
-        this.authService.login(this.user).subscribe((user: any) => {
-            console.log(user);
+        this.authService.login(this.user).subscribe((user: User) => {
             this.authSecurityService.setAuthenticatedUser(user);
             this.router.navigate(['/dashboard']);
         });

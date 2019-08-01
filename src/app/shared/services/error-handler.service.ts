@@ -38,12 +38,8 @@ export class ErrorHandlerService {
         });
 
         this.error.error.errors.forEach((value) => {
-            $('input[name="' + value.field + '"]')
-                .parent()
-                .parent()
-                .addClass('error')
-                .find('.form-text-error')
-                .text(value.message);
+            let input = $('input[name="' + value.field + '"]');
+            input.parent().parent().addClass('error').find('.form-text-error').text(value.message);
         });
     }
 

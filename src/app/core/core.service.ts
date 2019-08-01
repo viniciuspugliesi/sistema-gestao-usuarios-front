@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {ActivationEnd, NavigationEnd, NavigationStart, NavigationCancel, Router} from '@angular/router';
+import {ActivationEnd, NavigationCancel, NavigationEnd, NavigationStart, Router} from '@angular/router';
 import PerfectScrollbar from 'perfect-scrollbar';
 import {BehaviorSubject, Observable} from 'rxjs';
 
@@ -30,7 +30,7 @@ export class CoreService {
                 }, 600);
             }
 
-            if (event instanceof NavigationCancel) {
+            if (event instanceof NavigationCancel && event.url !== '/dashboard') {
                 this.router.navigate(['/error/401']);
             }
         });
@@ -92,11 +92,15 @@ export class CoreService {
     }
 
     reloadInputs() {
-        $('.form-group-label .form-control').change(function() {
+        $(document).on('change', '.form-group-label .form-control', function() {
             if ($(this).val() && !$(this).hasClass('has-value')) {
                 $(this).addClass('has-value');
             } else if (!$(this).val()) {
                 $(this).removeClass('has-value');
+            }
+
+            if ($(this).parent().parent().hasClass('error')) {
+                $(this).parent().parent().removeClass('error');
             }
         });
 

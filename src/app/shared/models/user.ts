@@ -7,6 +7,8 @@ export class User {
 
     public password: string;
 
+    public passwordConfirmation: string;
+
     public emailVerifiedAt: number;
 
     public passwordExpiresAt: number;

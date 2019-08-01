@@ -18,6 +18,6 @@ export class CryptoSecurityService {
 
     public decrypt(encrypted: string): User {
         let decrypted = CryptoJS.AES.decrypt(encrypted, this.secretKey);
-        return JSON.parse(decrypted.toString());
+        return JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
     }
 }

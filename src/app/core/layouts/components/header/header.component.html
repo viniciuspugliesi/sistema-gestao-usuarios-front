@@ -215,7 +215,7 @@
                     </div>
 
                     <div class="peer">
-                        <span class="fsz-sm c-grey-900">Gael Fernandez</span>
+                        <span class="fsz-sm c-grey-900">{{ user.name }}</span>
                         <br>
                         <small class="text-muted">VP People Manager</small>
                     </div>
@@ -232,7 +232,8 @@
                                     <div class="widget-content-wrapper">
                                         <div class="widget-content-left mr-3">
                                             <img alt=""
-                                                 class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg">
+                                                 class="w-3r bdrs-50p"
+                                                 src="https://randomuser.me/api/portraits/men/10.jpg">
                                         </div>
                                         <div class="widget-content-left">
                                             <span class="widget-heading">Gael Fernandez</span>
@@ -240,7 +241,7 @@
                                             <small class="widget-subheading opacity-8">VP People Manager</small>
                                         </div>
                                         <div class="widget-content-right mr-2">
-                                            <a href="#" prevent-default (click)="logout()" class="btn btn-dark">
+                                            <a routerLink="/logout" class="btn btn-dark" href="#" prevent-default>
                                                 Logout
                                             </a>
                                         </div>

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthSecurityService} from '../../../security/auth-security.service';
-import {Router} from '@angular/router';
-import {AuthService} from '../../../../modules/auth/auth.service';
+import {User} from '../../../../shared/models/user';
 
 declare let $: any;
 
@@ -11,12 +10,13 @@ declare let $: any;
 })
 export class HeaderComponent implements OnInit {
 
-    public constructor(private authSecurityService: AuthSecurityService,
-                       private authService: AuthService,
-                       private router: Router) {
+    public user: User = new User();
+
+    public constructor(private authSecurityService: AuthSecurityService) {
     }
 
     public ngOnInit(): void {
+        this.user = this.authSecurityService.getAuthenticatedUser();
     }
 
     public toggleMenu(): void {
@@ -26,12 +26,5 @@ export class HeaderComponent implements OnInit {
     public searchToggle(): void {
         $('.search-box, .search-input').toggleClass('active');
         $('.search-input input').focus();
-    }
-
-    public logout(): void {
-        this.authService.logout().subscribe(() => {
-            this.authSecurityService.logout();
-            this.router.navigate(['/login']);
-        });
     }
 }
