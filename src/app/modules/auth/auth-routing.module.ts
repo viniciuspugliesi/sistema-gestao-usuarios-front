@@ -8,9 +8,11 @@ import {UnverifiedComponent} from './unverified/unverified.component';
 import {RedirectIfAuthenticatedGuard} from '../../core/guards/redirect-if-authenticated/redirect-if-authenticated.guard';
 import {RedirectIfVerifiedGuard} from '../../core/guards/redirect-if-verified/redirect-if-verified.guard';
 import {LogoutComponent} from './logout/logout.component';
+import {EmailVerificationComponent} from './email-verification/email-verification.component';
 
 const routes: Routes = [
     {path: 'logout', component: LogoutComponent},
+    {path: 'email-verification', component: EmailVerificationComponent},
     {
         path: '', canActivate: [RedirectIfAuthenticatedGuard], children: [
             {path: 'login', component: LoginComponent},

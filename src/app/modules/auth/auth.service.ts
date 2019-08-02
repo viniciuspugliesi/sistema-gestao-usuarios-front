@@ -31,8 +31,13 @@ export class AuthService {
         return this.http.post<void>(url, user);
     }
 
-    resetPassword(user: User): Observable<void> {
+    public resetPassword(user: User): Observable<void> {
         let url = '/auth/reset-password';
         return this.http.post<void>(url, user);
+    }
+
+    public emailVerification(token: string): Observable<void> {
+        let url = '/auth/email-verification?token=' + token;
+        return this.http.get<void>(url);
     }
 }

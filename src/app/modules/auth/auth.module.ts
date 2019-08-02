@@ -13,6 +13,7 @@ import {ModalPrivacyComponent} from './components/helpers-list/components/modal-
 import {ModalTermsOfUseComponent} from './components/helpers-list/components/modal-terms-of-use/modal-terms-of-use.component';
 import {SharedModule} from '../../shared/shared.module';
 import {LogoutComponent} from './logout/logout.component';
+import {EmailVerificationComponent} from './email-verification/email-verification.component';
 
 @NgModule({
     imports: [
@@ -31,7 +32,8 @@ import {LogoutComponent} from './logout/logout.component';
         ModalHelpComponent,
         ModalPrivacyComponent,
         ModalTermsOfUseComponent,
-        LogoutComponent
+        LogoutComponent,
+        EmailVerificationComponent
     ]
 })
 export class AuthModule {

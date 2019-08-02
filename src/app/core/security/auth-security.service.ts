@@ -19,6 +19,11 @@ export class AuthSecurityService {
 
     public getAuthenticatedUser(): User {
         let userEncrypted = localStorage.getItem(environment.localStorage.user);
+
+        if (userEncrypted == null) {
+            return;
+        }
+
         return this.cryptoService.decrypt(userEncrypted);
     }
 

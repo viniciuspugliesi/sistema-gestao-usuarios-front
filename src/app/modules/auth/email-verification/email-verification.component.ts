@@ -1,19 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
-import {environment} from '../../../../environments/environment';
-import {User} from '../../../shared/models/user';
-import Swal from 'sweetalert2';
 import {AuthService} from '../auth.service';
+import {environment} from '../../../../environments/environment';
+import Swal from 'sweetalert2';
 import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
-    selector: 'app-reset-password',
-    templateUrl: './reset-password.component.html'
+    selector: 'app-email-verification',
+    templateUrl: './email-verification.component.html'
 })
-export class ResetPasswordComponent implements OnInit {
-
-    private user: User = new User();
+export class EmailVerificationComponent implements OnInit {
 
     constructor(private router: Router,
                 private title: Title,
@@ -21,18 +18,18 @@ export class ResetPasswordComponent implements OnInit {
                 private authService: AuthService) {
     }
 
-    ngOnInit() {
-        this.title.setTitle('Reset password - ' + environment.applicationName);
+    public ngOnInit() {
+        this.title.setTitle('Check password - ' + environment.applicationName);
         this.handlerQueryParamToken();
     }
 
-    sendResetPasswordForm() {
-        this.authService.resetPassword(this.user).subscribe(() => {
+    private sendEmailVerification(token: string) {
+        this.authService.emailVerification(token).subscribe(() => {
             this.router.navigate(['/login']).then(() => {
                 Swal.fire({
                     type: 'success',
-                    title: 'Senha alterada!',
-                    text: 'Sua senha foi alterada com sucesso, realize seu login com a nova senha.',
+                    title: 'Cadastrado ativado!',
+                    text: 'Seu cadastro foi ativado e agora você pode acessar o sistema normalmente.',
                 });
             });
         }, (e: HttpErrorResponse) => {
@@ -53,7 +50,7 @@ export class ResetPasswordComponent implements OnInit {
     private handlerQueryParamToken(): void {
         this.activatedRoute.queryParams.subscribe(params => {
             if (params.token == null) {
-                this.router.navigate(['login']).then(() => {
+                return this.router.navigate(['login']).then(() => {
                     Swal.fire({
                         type: 'error',
                         title: 'Token inválido!',
@@ -62,7 +59,7 @@ export class ResetPasswordComponent implements OnInit {
                 });
             }
 
-            this.user.token = (params.token) ? params.token : '';
+            this.sendEmailVerification(params.token);
         });
     }
 }
