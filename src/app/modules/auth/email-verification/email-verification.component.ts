@@ -23,6 +23,16 @@ export class EmailVerificationComponent implements OnInit {
         this.handlerQueryParamToken();
     }
 
+    private handlerQueryParamToken(): void {
+        this.activatedRoute.queryParams.subscribe(params => {
+            if (params.token == null) {
+                return this.router.navigate(['login']);
+            }
+
+            this.sendEmailVerification(params.token);
+        });
+    }
+
     private sendEmailVerification(token: string) {
         this.authService.emailVerification(token).subscribe(() => {
             this.router.navigate(['/login']).then(() => {
@@ -39,27 +49,11 @@ export class EmailVerificationComponent implements OnInit {
                         Swal.fire({
                             type: 'error',
                             title: 'Token inválido!',
-                            text: 'O token utilizado é inválido, expirou ou já foi utilizado.',
+                            text: 'O token é inválido, expirou ou já foi utilizado.',
                         });
                     });
                 }
             });
-        });
-    }
-
-    private handlerQueryParamToken(): void {
-        this.activatedRoute.queryParams.subscribe(params => {
-            if (params.token == null) {
-                return this.router.navigate(['login']).then(() => {
-                    Swal.fire({
-                        type: 'error',
-                        title: 'Token inválido!',
-                        text: 'Não foi encontrado o token.',
-                    });
-                });
-            }
-
-            this.sendEmailVerification(params.token);
         });
     }
 }

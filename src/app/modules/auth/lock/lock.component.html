@@ -1,0 +1,49 @@
+<div class="pos-a t-0 l-0 bgc-white w-100 h-100 d-f fxd-r fxw-w ai-c jc-c">
+    <div class="peer peer-greed h-100 pos-r bgr-n bgpX-c bgpY-c bgsz-cv"
+         style="background-image: url('/assets/images/bg.png')">
+
+        <div class="bg-dark w-100 h-100 op-60p"></div>
+    </div>
+
+    <div class="d-f jc-c fxd-c pos-f" style="width: 100%; max-width: 400px; box-shadow: 0 0 3px 0 #111">
+        <div class="col-12 peer pX-40 bgc-white ps ps--active-y">
+            <div class="mY-50">
+                <div class="text-center">
+                    <img alt="Logo" class="mT-10 mB-30" src="/assets/images/logo-full.png" width="90%">
+                </div>
+
+                <h4 class="fw-300 c-grey-900">Welcome {{ user.name }}</h4>
+
+                <p>You have been logged out due to idleness. Enter your password to log back in.</p>
+
+                <form (submit)="sendLockForm()" class="mT-60">
+                    <div class="form-group form-group-label">
+                        <div class="input-group">
+                            <input [(ngModel)]="user.password" class="form-control" name="password" type="password"/>
+                            <label>Enter your password</label>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text input-password">
+                                    <i class="far fa-eye-slash fa-lg"></i>
+                                </div>
+                            </div>
+                            <div class="form-line"></div>
+                            <small class="form-text form-text-error"></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="peers ai-c jc-sb fxw-nw">
+                            <div class="peer">
+                                <button class="btn btn-primary pX-50">Login</button>
+                            </div>
+
+                            <div class="peer">
+                                <a routerLink="/logout" class="btn btn-outline-secondary pX-50">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,9 +6,10 @@ import {ForgotPasswordComponent} from './forgot-password/forgot-password.compone
 import {ResetPasswordComponent} from './reset-password/reset-password.component';
 import {UnverifiedComponent} from './unverified/unverified.component';
 import {RedirectIfAuthenticatedGuard} from '../../core/guards/redirect-if-authenticated/redirect-if-authenticated.guard';
-import {RedirectIfVerifiedGuard} from '../../core/guards/redirect-if-verified/redirect-if-verified.guard';
 import {LogoutComponent} from './logout/logout.component';
 import {EmailVerificationComponent} from './email-verification/email-verification.component';
+import {LockComponent} from './lock/lock.component';
+import {RedirectIfNotAuthenticatedGuard} from '../../core/guards/redirect-if-not-authenticated/redirect-if-not-authenticated.guard';
 
 const routes: Routes = [
     {path: 'logout', component: LogoutComponent},
@@ -22,8 +23,9 @@ const routes: Routes = [
         ]
     },
     {
-        path: '', canActivate: [RedirectIfVerifiedGuard], children: [
+        path: '', canActivate: [RedirectIfNotAuthenticatedGuard], children: [
             {path: 'email-unverified', component: UnverifiedComponent},
+            {path: 'lock', component: LockComponent},
         ]
     },
 ];
