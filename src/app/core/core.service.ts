@@ -9,12 +9,13 @@ declare let $: any;
 export class CoreService {
     private loaderStatus$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-    constructor(private router: Router) {
+    public constructor(private router: Router) {
         this.watchRouter();
         this.focusSideBarItem();
+        this.initInputPassword();
     }
 
-    watchRouter(): void {
+    private watchRouter(): void {
         this.router.events.subscribe(event => {
             if (event instanceof NavigationStart || event instanceof ActivationEnd) {
                 this.setLoader(true);
@@ -36,34 +37,33 @@ export class CoreService {
         });
     }
 
-    reload(): void {
+    public reload(): void {
         this.reloadPerfectScroll();
         this.reloadInputs();
-        this.reloadInputPassword();
         this.reloadPopover();
         this.reloadTooltip();
         this.reloadDatepicker();
     }
 
-    setLoader(status: boolean): void {
+    public setLoader(status: boolean): void {
         this.loaderStatus$.next(status);
     }
 
-    getLoader(): Observable<boolean> {
+    public getLoader(): Observable<boolean> {
         return this.loaderStatus$.asObservable();
     }
 
-    reloadPopover(): void {
+    public reloadPopover(): void {
         $('[data-toggle="popover"]').popover();
     }
 
-    reloadTooltip(): void {
+    public reloadTooltip(): void {
         $('[data-toggle="tooltip"]').tooltip({
             template: '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
         });
     }
 
-    reloadPerfectScroll(): void {
+    public reloadPerfectScroll(): void {
         $('.scrollable').each((index, el) => {
             return new PerfectScrollbar(el, {
                 wheelSpeed: 2,
@@ -91,7 +91,7 @@ export class CoreService {
         });
     }
 
-    reloadInputs() {
+    public reloadInputs() {
         $(document).on('change', '.form-group-label .form-control', function() {
             if ($(this).val() && !$(this).hasClass('has-value')) {
                 $(this).addClass('has-value');
@@ -113,7 +113,7 @@ export class CoreService {
         });
     }
 
-    reloadInputPassword() {
+    public initInputPassword() {
         $(document).on('click', '.input-password', function() {
             let i = $(this).find('i');
             let input = $(this).parent().parent().parent().find('input');
@@ -132,11 +132,11 @@ export class CoreService {
         });
     }
 
-    reloadDatepicker() {
+    public reloadDatepicker() {
         $('.datepicker').datepicker();
     }
 
-    focusSideBarItem() {
+    public focusSideBarItem() {
         let parentRoute = $('nav.sidebar .sidebar-menu a.active').parent().parent();
 
         if (parentRoute.is('ul.dropdown-menu')) {
