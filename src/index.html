@@ -9,5 +9,26 @@
 </head>
 <body>
     <app-root></app-root>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC5u0FL-FAXEWaoro0YKhKeHiuN7KomhD0",
+            authDomain: "sistema-gestao-usuarios.firebaseapp.com",
+            databaseURL: "https://sistema-gestao-usuarios.firebaseio.com",
+            projectId: "sistema-gestao-usuarios",
+            storageBucket: "",
+            messagingSenderId: "1060180906960",
+            appId: "1:1060180906960:web:0ac0ad001f4e4a5f"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 </body>
 </html>
