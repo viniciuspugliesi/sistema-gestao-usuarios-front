@@ -1,4 +1,5 @@
 import {Inject} from '@angular/core';
+import moment = require('moment');
 
 declare let require: any;
 let dateFormat = require('dateformat');
@@ -6,17 +7,17 @@ let dateFormat = require('dateformat');
 @Inject({})
 export class DateTimeHelper {
 
-    dayNames: Array<string> = [
+    public dayNames: Array<string> = [
         'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab',
         'Domingo', 'Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sábado'
     ];
 
-    monthNames: Array<string> = [
+    public monthNames: Array<string> = [
         'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez',
         'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
     ];
 
-    timeNames: Array<string> = [
+    public timeNames: Array<string> = [
         'a', 'p', 'am', 'pm', 'A', 'P', 'AM', 'PM'
     ];
 
@@ -28,7 +29,7 @@ export class DateTimeHelper {
         };
     }
 
-    formatForTimestamp(timestamp: number, format: string = 'dd/mm/yyyy HH:MM:ss'): string {
+    public formatForTimestamp(timestamp: number, format: string = 'dd/mm/yyyy HH:MM:ss'): string {
         if (!timestamp) {
             return '';
         }
@@ -38,7 +39,7 @@ export class DateTimeHelper {
         return dateFormat(date, format);
     }
 
-    formatForParseDate(date: any = '', format: string = 'yyyy-mm-dd', display: string = 'dd/mm/yyyy HH:MM:ss'): string {
+    public formatForParseDate(date: any = '', format: string = 'yyyy-mm-dd', display: string = 'dd/mm/yyyy HH:MM:ss'): string {
         if (!date) {
             return '';
         }
@@ -55,5 +56,9 @@ export class DateTimeHelper {
         let newDate = new Date(parts[fmt['yyyy']], parts[fmt['mm']] - 1, parts[fmt['dd']]);
 
         return dateFormat(newDate, display);
+    }
+
+    public isBeforeNow(date: string): boolean {
+        return moment(date).isBefore(moment());
     }
 }

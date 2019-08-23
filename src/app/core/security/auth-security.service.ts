@@ -17,6 +17,10 @@ export class AuthSecurityService {
         localStorage.setItem(environment.localStorage.user, this.cryptoService.encrypt(user));
     }
 
+    public updateAuthenticatedUser(user: User): void {
+        localStorage.setItem(environment.localStorage.user, this.cryptoService.encrypt(user));
+    }
+
     public getAuthenticatedUser(): User {
         let userEncrypted = localStorage.getItem(environment.localStorage.user);
 

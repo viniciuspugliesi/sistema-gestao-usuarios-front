@@ -6,7 +6,7 @@ import {environment} from '../../../../environments/environment';
 
 @Component({
     selector: 'app-logout',
-    templateUrl: './logout.component.html'
+    template: ''
 })
 export class LogoutComponent implements OnInit {
 

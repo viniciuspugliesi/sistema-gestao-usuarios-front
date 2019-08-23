@@ -40,4 +40,14 @@ export class AuthService {
         let url = '/auth/email-verification?token=' + token;
         return this.http.get<void>(url);
     }
+
+    resendVerification(): Observable<void> {
+        let url = '/auth/resend-verification';
+        return this.http.get<void>(url);
+    }
+
+    passwordExpired(user: User): Observable<User> {
+        let url = '/auth/password-expired';
+        return this.http.post<User>(url, user);
+    }
 }

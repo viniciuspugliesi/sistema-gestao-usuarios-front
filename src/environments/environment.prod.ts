@@ -8,5 +8,14 @@ export const environment = {
     },
     encryption: {
         secretKey: '7632f25390adjLyU5Cj06DlYrT8uH0jKg3d3a0e562b4fcb87d232a',
+    },
+    firebase: {
+        apiKey: 'AIzaSyC5u0FL-FAXEWaoro0YKhKeHiuN7KomhD0',
+        authDomain: 'sistema-gestao-usuarios.firebaseapp.com',
+        databaseURL: 'https://sistema-gestao-usuarios.firebaseio.com',
+        projectId: 'sistema-gestao-usuarios',
+        storageBucket: '',
+        messagingSenderId: '1060180906960',
+        appId: '1:1060180906960:web:0ac0ad001f4e4a5f'
     }
 };

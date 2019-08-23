@@ -7,6 +7,9 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {SharedModule} from './shared/shared.module';
 import {CoreModule} from './core/core.module';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {environment} from '../environments/environment';
 
 @NgModule({
     declarations: [
@@ -19,7 +22,9 @@ import {CoreModule} from './core/core.module';
         AppRoutingModule,
         SharedModule,
         CoreModule,
-        AppRoutingModule
+        AppRoutingModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireDatabaseModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -13,7 +13,7 @@ import {HttpErrorResponse} from '@angular/common/http';
 })
 export class ResetPasswordComponent implements OnInit {
 
-    private user: User = new User();
+    public user: User = new User();
 
     constructor(private router: Router,
                 private title: Title,

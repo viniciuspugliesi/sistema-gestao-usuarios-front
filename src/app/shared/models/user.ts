@@ -9,13 +9,13 @@ export class User {
 
     public passwordConfirmation: string;
 
-    public emailVerifiedAt: number;
+    public emailVerifiedAt: string;
 
-    public passwordExpiresAt: number;
+    public passwordExpiresAt: string;
 
     public token: string;
 
-    public createdAt: number;
+    public createdAt: string;
 
-    public updatedAt: number;
+    public updatedAt: string;
 }

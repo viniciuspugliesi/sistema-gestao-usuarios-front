@@ -10,6 +10,7 @@ import {LogoutComponent} from './logout/logout.component';
 import {EmailVerificationComponent} from './email-verification/email-verification.component';
 import {LockComponent} from './lock/lock.component';
 import {RedirectIfNotAuthenticatedGuard} from '../../core/guards/redirect-if-not-authenticated/redirect-if-not-authenticated.guard';
+import {PasswordExpiredComponent} from './password-expired/password-expired.component';
 
 const routes: Routes = [
     {path: 'logout', component: LogoutComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
     {
         path: '', canActivate: [RedirectIfNotAuthenticatedGuard], children: [
             {path: 'email-unverified', component: UnverifiedComponent},
+            {path: 'password-expired', component: PasswordExpiredComponent},
             {path: 'lock', component: LockComponent},
         ]
     },

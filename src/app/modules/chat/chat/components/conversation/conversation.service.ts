@@ -10,7 +10,7 @@ export class ConversationService {
     }
 
     newMessage(contact: Contact, message: string): Contact {
-        var last_conversation = contact.conversations[contact.conversations.length - 1];
+        let last_conversation = contact.conversations[contact.conversations.length - 1];
 
         if (last_conversation && last_conversation.itsMine) {
             last_conversation.messages.push(new Message().fill(message, 1554830989));

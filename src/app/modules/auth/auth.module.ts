@@ -15,6 +15,7 @@ import {SharedModule} from '../../shared/shared.module';
 import {LogoutComponent} from './logout/logout.component';
 import {EmailVerificationComponent} from './email-verification/email-verification.component';
 import {LockComponent} from './lock/lock.component';
+import { PasswordExpiredComponent } from './password-expired/password-expired.component';
 
 @NgModule({
     imports: [
@@ -35,7 +36,8 @@ import {LockComponent} from './lock/lock.component';
         ModalTermsOfUseComponent,
         LogoutComponent,
         EmailVerificationComponent,
-        LockComponent
+        LockComponent,
+        PasswordExpiredComponent
     ]
 })
 export class AuthModule {

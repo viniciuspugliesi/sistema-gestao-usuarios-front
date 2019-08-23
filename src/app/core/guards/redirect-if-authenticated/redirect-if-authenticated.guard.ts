@@ -3,12 +3,14 @@ import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '
 import {AuthSecurityService} from '../../security/auth-security.service';
 import {environment} from '../../../../environments/environment';
 import {User} from '../../../shared/models/user';
+import {DateTimeHelper} from '../../../shared/helpers/date-time-helper';
 
 @Injectable()
 export class RedirectIfAuthenticatedGuard implements CanActivate {
 
     constructor(private authSecurityService: AuthSecurityService,
-                private router: Router) {
+                private router: Router,
+                private dateTimeHelper: DateTimeHelper) {
     }
 
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
@@ -26,6 +28,10 @@ export class RedirectIfAuthenticatedGuard implements CanActivate {
 
             if (user.emailVerifiedAt === null) {
                 this.router.navigate(['email-unverified']);
+            }
+
+            if (this.dateTimeHelper.isBeforeNow(user.passwordExpiresAt)) {
+                this.router.navigate(['password-expired']);
             }
 
             this.router.navigate(['/']);

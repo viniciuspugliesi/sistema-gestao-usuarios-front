@@ -12,7 +12,7 @@ import {AuthSecurityService} from '../../../core/security/auth-security.service'
 })
 export class LoginComponent implements OnInit {
 
-    private user: User = new User();
+    public user: User = new User();
 
     constructor(private router: Router,
                 private title: Title,

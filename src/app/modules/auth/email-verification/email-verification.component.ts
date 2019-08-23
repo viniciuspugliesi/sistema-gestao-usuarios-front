@@ -8,7 +8,7 @@ import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
     selector: 'app-email-verification',
-    templateUrl: './email-verification.component.html'
+    template: ''
 })
 export class EmailVerificationComponent implements OnInit {
 
